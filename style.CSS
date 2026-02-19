@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   PART A: BOX MODEL
+========================= */
+
+.box {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 20px;
+    background-color: lightblue;
+}
+
+/* Different spacing */
+.box2 {
+    padding: 40px;
+    margin: 40px;
+    border: 8px dashed red;
+    background-color: lightgreen;
+}
+
+/* border-box example */
+.box3 {
+    box-sizing: border-box;
+    background-color: lightcoral;
+}
+
+/* =========================
+   PART C: DISPLAY TYPES
+========================= */
+
+/* block */
+.block {
+    display: block;
+    background-color: lightgray;
+    margin: 10px 0;
+}
+
+/* inline */
+.inline {
+    display: inline;
+    background-color: yellow;
+    padding: 5px;
+}
+
+/* inline-block */
+.inline-block {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    background-color: orange;
+    text-align: center;
+    padding: 10px;
+}
+
+/* display none */
+.hidden-display {
+    display: none;
+    background-color: red;
+    color: white;
+}
+
+/* visibility hidden */
+.hidden-visibility {
+    visibility: hidden;
+    background-color: purple;
+    color: white;
+    margin-top: 10px;
+}
