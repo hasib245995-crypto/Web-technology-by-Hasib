@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Info AJAX Demo</title>
+    <style>
+        body { font-family: Arial; }
+        #result { margin-top: 20px; }
+        .student { padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<h2>Student Information</h2>
+
+<button onclick="loadStudents()">Load Students</button>
+
+<div id="result"></div>
+
+<script>
+function loadStudents() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "students.php", true);
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            // Convert JSON response into JavaScript object
+            var students = JSON.parse(xhr.responseText);
+
+            var output = "";
+
+            // Loop through student data
+            for (var i = 0; i < students.length; i++) {
+                output += `
+                    <div class="student">
+                        <strong>Name:</strong> ${students[i].name}<br>
+                        <strong>ID:</strong> ${students[i].id}<br>
+                        <strong>Department:</strong> ${students[i].department}<br>
+                        <strong>CGPA:</strong> ${students[i].cgpa}
+                    </div>
+                `;
+            }
+
+            // Display data without reloading page
+            document.getElementById("result").innerHTML = output;
+        }
+    };
+
+    xhr.send();
+}
+</script>
+
+</body>
+</html>
